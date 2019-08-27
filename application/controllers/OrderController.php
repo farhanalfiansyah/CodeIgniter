@@ -21,16 +21,16 @@ class OrderController extends CI_Controller {
                                 'bayar_tunai' => $DataPenjualan['BayarTunai'],
                                 'kembali' => $DataPenjualan['Kembali']
                         ]);
-                                foreach ($Detail as $key) {
-                                        $TambahDetail = $this->PenjualanDetail->insert([
-                                                'penjualan_id'=>$TambahPenjualan,
-                                                'item' => $key['Item'],
-                                                'qty' => $key['Qty'],
-                                                'harga_satuan' => $key['HargaSatuan'],
-                                                'sub_total' => $key['SubTotal']
-                                        ]);        
-                                }
-                                echo "SUCCESS";
+                        foreach ($Detail as $key) {
+                                $TambahDetail = $this->PenjualanDetail->insert([
+                                        'penjualan_id'=>$TambahPenjualan,
+                                        'item' => $key['Item'],
+                                        'qty' => $key['Qty'],
+                                        'harga_satuan' => $key['HargaSatuan'],
+                                        'sub_total' => $key['SubTotal']
+                                ]);        
+                        }
+                        echo "SUCCESS";
                 }
         }
 }

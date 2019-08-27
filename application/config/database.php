@@ -75,9 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
+	'hostname' => 'dev.nutacloud.com',
 	'username' => 'root',
-	'password' => '',
+	'password' => 'Lentera1nf',
 	'database' => 'nutacloud',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
