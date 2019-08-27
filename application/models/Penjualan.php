@@ -7,9 +7,10 @@ class Penjualan extends CI_Model{
     private $table = "penjualan";
 
     public function insert($data){
-        return $this->db->insert($this->table, $data);
+        $query = $this->db->insert($this->table, $data);
+        return $this->db->insert_id();
     }
-    
+
     public function get_one($where){
         return $this->db->get_where($this->table, $where)->row();
     }

@@ -7,7 +7,8 @@ class PenjualanDetail extends CI_Model{
     private $table = "detail_penjualan";
 
     public function insert($data){
-        return $this->db->insert($this->table, $data);
+        $query = $this->db->insert($this->table, $data);
+        return $this->db->insert_id();
     }
     
     public function get_one($where){

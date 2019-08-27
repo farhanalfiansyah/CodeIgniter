@@ -21,11 +21,9 @@ class OrderController extends CI_Controller {
                                 'bayar_tunai' => $DataPenjualan['BayarTunai'],
                                 'kembali' => $DataPenjualan['Kembali']
                         ]);
-                        if($TambahPenjualan){
-                                $Penjualan = $this->Penjualan->get_one(['nama_pelanggan'=>$DataPenjualan['NamaPelanggan']]);
                                 foreach ($Detail as $key) {
                                         $TambahDetail = $this->PenjualanDetail->insert([
-                                                'penjualan_id'=>$Penjualan->id,
+                                                'penjualan_id'=>$TambahPenjualan,
                                                 'item' => $key['Item'],
                                                 'qty' => $key['Qty'],
                                                 'harga_satuan' => $key['HargaSatuan'],
@@ -33,7 +31,6 @@ class OrderController extends CI_Controller {
                                         ]);        
                                 }
                                 echo "SUCCESS";
-                        }
                 }
         }
 }
