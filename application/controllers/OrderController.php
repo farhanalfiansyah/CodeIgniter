@@ -8,6 +8,10 @@ class OrderController extends CI_Controller {
                 $this->load->model('PenjualanDetail');
             }
 
+        public function index(){
+                echo "Tes Berhasil";
+        }            
+
         public function createOrder()
         {
                 $DataPenjualan = json_decode($this->input->raw_input_stream,true);
